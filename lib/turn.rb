@@ -69,12 +69,15 @@ class Turn
     end
 
     def add_to_basic_spoils
-        @spoils_of_war << player1.deck.remove_card
-        @spoils_of_war << player2.deck.remove_card
-
+        @spoils_of_war = []
+        1.times do
+            @spoils_of_war << player1.deck.remove_card
+            @spoils_of_war << player2.deck.remove_card
+        end
     end
 
     def add_to_war_spoils
+        @spoils_of_war = []
         3.times do
             @spoils_of_war << player1.deck.remove_card
             @spoils_of_war << player2.deck.remove_card
@@ -91,11 +94,12 @@ class Turn
     end
 
     def award_spoils(winner)
-        winner.deck.cards.unshift(spoils_of_war)
-
+        winner.deck.cards.<<(spoils_of_war)
+        binding.pry
         end
 
     def pile_cards
+
         case type
         when :basic
             add_to_basic_spoils(winner)

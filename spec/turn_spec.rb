@@ -77,7 +77,8 @@ RSpec.describe Turn do
     it 'awards spoils' do
         @turn.add_to_basic_spoils
         @turn.award_spoils(@player1)
-        binding.pry
+        #binding.pry
+        expect(@turn.player1.deck.cards).to include(@card8, @card7)
     end
 
 
