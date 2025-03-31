@@ -1,6 +1,7 @@
 require 'rspec'
 require './lib/card'
 require './lib/deck'
+require './lib/player'
 require 'pry'
 
 RSpec.describe Deck do
@@ -124,7 +125,7 @@ RSpec.describe Deck do
         deck.add_card(card2)
         deck.add_card(card3)
 
-        expect(deck.remove_card).to eq(2)        
+        expect(deck.remove_card.rank).to eq(12)        
 
     end
 

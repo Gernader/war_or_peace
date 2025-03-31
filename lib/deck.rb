@@ -2,14 +2,11 @@ require './lib/card'
 
 class Deck
     attr_reader :cards
-    
-    
 
     def initialize(card)
         @cards = card
         @face_cards = []
         #@cards << card
-
     end
 
     def add_card(card)
@@ -49,7 +46,7 @@ class Deck
 
     def remove_card
         @cards.pop  
-        return @cards.size
+        #return @cards.size
     end
 
 end
